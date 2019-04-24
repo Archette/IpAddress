@@ -10,5 +10,13 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Archette\\IpAddress\\": "src"
+        }
+    },
+    "require": {
+        "rixafy/ip-address": "dev-master",
+        "nette/di": "^3.0@dev"
+    }
 }
