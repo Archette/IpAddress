@@ -14,14 +14,14 @@ use Rixafy\IpAddress\IpAddressResolver;
 
 class IpAddressExtension extends CompilerExtension
 {
-	public function beforeCompile()
+	public function beforeCompile(): void
 	{
 		/** @var ServiceDefinition $annotationDriver */
 		$annotationDriver = $this->getContainerBuilder()->getDefinitionByType(AnnotationDriver::class);
 		$annotationDriver->addSetup('addPaths', [['vendor/rixafy/ip-address']]);
 	}
 
-	public function loadConfiguration()
+	public function loadConfiguration(): void
 	{
 		$this->getContainerBuilder()->addDefinition($this->prefix('ipAddressFactory'))
 			->setFactory(IpAddressFactory::class);
