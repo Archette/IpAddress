@@ -16,9 +16,14 @@ class IpAddressExtension extends CompilerExtension
 {
 	public function beforeCompile(): void
 	{
-		/** @var ServiceDefinition $annotationDriver */
-		$annotationDriver = $this->getContainerBuilder()->getDefinitionByType(MappingDriver::class);
-		$annotationDriver->addSetup('addPaths', [['vendor/rixafy/ip-address']]);
+		if (class_exists('Nettrine\ORM\DI\Helpers\MappingHelper')) {
+			\Nettrine\ORM\DI\Helpers\MappingHelper::of($this)
+				->addAnnotation('Rixafy\IpAddress', __DIR__ . '/../../../rixafy/ip-address');
+		} else {
+			/** @var ServiceDefinition $annotationDriver */
+			$annotationDriver = $this->getContainerBuilder()->getDefinitionByType(MappingDriver::class);
+			$annotationDriver->addSetup('addPaths', [['vendor/rixafy/ip-address']]);
+		}
 	}
 
 	public function loadConfiguration(): void
