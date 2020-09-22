@@ -9,14 +9,16 @@
             "email": "rixafy@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Archette\\IpAddress\\": "src"
         }
     },
     "require": {
-        "rixafy/ip-address": "dev-master",
-        "nette/di": "^3.0@dev"
+        "rixafy/ip-address": "^1.0"
+    },
+    "require-dev": {
+        "nette/di": "^3.0"
     }
 }
