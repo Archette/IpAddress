@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "rixafy/ip-address": "^1.0"
+        "rixafy/ip-address": "^2.0"
     },
     "require-dev": {
         "nette/di": "^3.0"
