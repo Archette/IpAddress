@@ -18,7 +18,7 @@ class IpAddressExtension extends CompilerExtension
 	{
 		if (class_exists('Nettrine\ORM\DI\Helpers\MappingHelper')) {
 			\Nettrine\ORM\DI\Helpers\MappingHelper::of($this)
-				->addAnnotation('Rixafy\IpAddress', __DIR__ . '/../../../rixafy/ip-address');
+				->addAttribute('Rixafy\IpAddress', __DIR__ . '/../../../rixafy/ip-address');
 		} else {
 			/** @var ServiceDefinition $annotationDriver */
 			$annotationDriver = $this->getContainerBuilder()->getDefinitionByType(MappingDriver::class);
